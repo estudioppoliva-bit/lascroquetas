@@ -140,3 +140,62 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; text-wrap
 @media (prefers-reduced-motion: reduce) {
   .coqueta .ojo, .coqueta .sonrisa, .coqueta.tiembla { animation: none; }
 }
+
+/* Cabecera de sección (recetas, historia, congeladas) */
+.cabecera-seccion { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 16px 24px; }
+.cabecera-seccion > div { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.cabecera-seccion h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); }
+.cabecera-seccion p { margin: 0; font-size: 18px; color: var(--tenue); max-width: 38em; }
+.banda-hielo .cabecera-seccion p { color: var(--hielo-tinta); }
+.banda-hielo a { color: var(--hielo-tinta); }
+
+/* Recetas */
+.rejilla-recetas { list-style: none; margin: 0 0 40px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 14px; }
+.rejilla-recetas > li { display: flex; }
+.tarjeta-receta { flex: 1; }
+.tarjeta-receta:hover, a.tarjeta:hover { border-color: var(--rosa); color: inherit; }
+.tarjeta-receta-titulo { font-family: var(--display); font-size: 22px; font-weight: 600; line-height: 1.15; }
+.receta-cabecera { display: flex; flex-direction: column; gap: 10px; padding-block: 16px 8px; }
+.receta-cabecera h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); }
+.receta-cabecera p { margin: 0; font-size: 19px; color: var(--tenue); max-width: 36em; }
+.tiempos { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 0; }
+.tiempos div { padding: 10px 16px; border-radius: 16px; background: var(--dorado-suave); }
+.tiempos dt { font-size: 13px; font-weight: 800; color: var(--tenue); }
+.tiempos dd { margin: 0; font-weight: 800; }
+.receta-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px; }
+@media (min-width: 860px) { .receta-cuerpo { grid-template-columns: 320px minmax(0, 1fr); align-items: start; } }
+.receta-principal { min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.receta-principal h2 { font-size: clamp(1.6rem, 3vw, 2rem); margin-bottom: 12px; }
+.receta-lateral { min-width: 0; }
+@media (min-width: 860px) { .receta-lateral { position: sticky; top: 16px; } }
+.ingredientes { display: flex; flex-direction: column; gap: 18px; padding: 22px; border-radius: 26px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.ingredientes h3 { font-size: 18px; margin-bottom: 6px; }
+.ingredientes ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.porciones { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 10px 10px 16px; border-radius: 18px; background: var(--rosa-suave); }
+.porciones strong { font-family: var(--display); font-size: 22px; }
+.porciones-botones { display: flex; gap: 8px; }
+.porciones-botones button { width: 44px; height: 44px; border-radius: 22px; border: 0; background: var(--rosa); color: #fff; font: inherit; font-size: 22px; font-weight: 800; cursor: pointer; }
+.porciones-botones button:disabled { opacity: 0.4; cursor: default; }
+.pasos { margin: 0; padding: 0; list-style: none; counter-reset: paso; display: flex; flex-direction: column; gap: 14px; }
+.pasos li { counter-increment: paso; display: flex; gap: 14px; font-size: 17px; }
+.pasos li::before { content: counter(paso); flex: none; width: 34px; height: 34px; border-radius: 17px; background: var(--tinta); color: #fff; font-family: var(--display); font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.lista-suave { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.historia-receta { padding: 24px; border-radius: 26px; background: var(--rosa-suave); }
+.historia-receta p { margin: 0 0 12px; font-size: 17px; }
+.historia-receta a { font-weight: 800; }
+.nota-prueba { margin: 0; font-size: 14px; color: var(--tenue); font-style: italic; }
+
+/* Historia */
+.linea { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.linea li { display: flex; gap: 20px; padding: 18px 0; border-top: 1.5px solid var(--linea); }
+.linea-cuando { flex: none; width: 130px; font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--rosa-oscuro); }
+.linea h3 { font-size: 22px; margin-bottom: 4px; }
+.linea p { margin: 0; font-size: 17px; max-width: 42em; }
+@media (max-width: 560px) { .linea li { flex-direction: column; gap: 4px; } }
+.eventos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 14px; }
+.evento-nombre { font-family: var(--display); font-size: 21px; font-weight: 600; }
+
+/* Congeladas */
+.chip-hielo { background: var(--hielo); color: var(--hielo-tinta); font-size: 13px; }
+.tarjeta-marca { flex: 1; }
+.banda-hielo .chip-hielo { background: #fff; }

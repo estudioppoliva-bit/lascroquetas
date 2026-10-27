@@ -2,7 +2,9 @@ import Link from "next/link";
 import CroquetaCoqueta from "@/components/CroquetaCoqueta";
 import Encabezado from "@/components/Encabezado";
 import TarjetaLugar from "@/components/TarjetaLugar";
-import { buscarLugares, estilos, totales } from "@/lib/datos";
+import { marcas } from "@/data/contenido";
+import { recetas } from "@/data/recetas";
+import { buscarLugares, totales } from "@/lib/datos";
 
 export default async function Portada() {
   const [cifras, mejores] = await Promise.all([
@@ -65,10 +67,10 @@ export default async function Portada() {
         <section className="contenedor seccion" id="estilos">
           <h2>Croquetas del mundo</h2>
           <div className="rejilla">
-            {estilos.map((e) => (
-              <Link key={e.clave} href={`/lugares?estilo=${e.clave}`} className="tarjeta">
-                <strong style={{ fontFamily: "var(--display)", fontSize: 20 }}>{e.nombre}</strong>
-                <span className="tenue">Ver lugares</span>
+            {recetas.map((r) => (
+              <Link key={r.clave} href={`/recetas/${r.clave}`} className="tarjeta">
+                <strong style={{ fontFamily: "var(--display)", fontSize: 20 }}>{r.titulo}</strong>
+                <span className="tenue">{r.origen} · Ver receta</span>
               </Link>
             ))}
           </div>
@@ -81,7 +83,13 @@ export default async function Portada() {
                 La historia
               </span>
               <h2 style={{ marginTop: 10 }}>De la cocina francesa a la Calle 8</h2>
-              <p>[Texto pendiente: cómo la croqueta nació en Francia, se hizo de bechamel en España y llegó a Cuba y a Miami.]</p>
+              <p>
+                Nació en la corte francesa del siglo XVII para aprovechar las sobras. En el XIX se hizo de bechamel, España la
+                convirtió en tapa, Cuba le dio su forma alargada y el exilio la trajo a las ventanitas de la Calle 8.
+              </p>
+              <Link href="/historia" className="boton" style={{ marginTop: 6 }}>
+                Leer la historia
+              </Link>
             </div>
             <div>
               <div className="fecha">
@@ -97,7 +105,7 @@ export default async function Portada() {
                 <span>
                   <strong>Kroqueta Fest y Alacroqueta</strong>
                   <br />
-                  Valencia y Alicante, España
+                  Valencia y Alicante, España · <Link href="/historia#festivales" style={{ color: "#FFB8D0" }}>festivales</Link>
                 </span>
               </div>
               <div className="fecha">
@@ -122,19 +130,16 @@ export default async function Portada() {
               </div>
             </div>
             <div className="rejilla" style={{ flex: "2 1 480px" }}>
-              <div className="tarjeta">
-                <strong>Catalina</strong>
-                <span>Publix, Sedano&apos;s, Walmart, Winn-Dixie</span>
-              </div>
-              <div className="tarjeta">
-                <strong>Trader Joe&apos;s</strong>
-                <span>Papas rellenas</span>
-              </div>
-              <div className="tarjeta">
-                <strong>José Andrés Foods</strong>
-                <span>Croquetas de pollo, en línea</span>
-              </div>
+              {marcas.slice(0, 3).map((m) => (
+                <div key={m.nombre} className="tarjeta">
+                  <strong>{m.nombre}</strong>
+                  <span>{m.tiendas.join(", ") === m.nombre ? m.producto : m.tiendas.join(", ")}</span>
+                </div>
+              ))}
             </div>
+            <Link href="/congeladas" className="boton" style={{ flex: "none" }}>
+              Ver todas las congeladas
+            </Link>
           </div>
         </section>
 
