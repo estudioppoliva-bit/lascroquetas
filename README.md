@@ -27,6 +27,7 @@ Sin `.env.local`, la app funciona igual con los datos de `src/data/lugares.json`
 
 - `supabase/migrations/20261027000000_esquema_inicial.sql`: tablas de zonas, estilos, sabores, lugares, comentarios, sellos del pasaporte y guardados, con seguridad por filas (cada usuario solo toca lo suyo).
 - `supabase/seed.sql`: carga las zonas, los estilos, los sabores y los 144 lugares.
+- `supabase/migrations/20261027190000_solicitudes_negocio.sql`: solicitudes del formulario Para negocios. La web solo puede enviarlas; se leen en el panel de Supabase (Table Editor → solicitudes_negocio).
 
 Para aplicarlos: en el panel de Supabase, abre el editor SQL, pega y ejecuta primero la migración y después `seed.sql`.
 

@@ -96,7 +96,7 @@ export default async function FichaLugar({ params }: { params: Promise<Params> }
                 <dd style={{ margin: 0, fontWeight: 700 }}>Llegarán desde Google Places</dd>
               </div>
             </dl>
-            <Link href="/#negocios" style={{ fontWeight: 700, textAlign: "center" }}>
+            <Link href={`/negocios?lugar=${lugar.slug}#solicitud`} style={{ fontWeight: 700, textAlign: "center" }}>
               ¿Eres el dueño? Reclama esta ficha
             </Link>
           </aside>

@@ -167,9 +167,16 @@ export default async function Portada() {
         </section>
 
         <section className="contenedor seccion" id="negocios">
-          <div className="tarjeta" style={{ background: "var(--rosa-suave)", border: 0 }}>
+          <div className="tarjeta" style={{ background: "var(--rosa-suave)", border: 0, padding: 28 }}>
+            <span className="etiqueta">Para negocios</span>
             <h2>¿Tienes un negocio de croquetas?</h2>
-            <p style={{ margin: 0 }}>Muy pronto podrás reclamar tu ficha, actualizar horarios y publicar ofertas.</p>
+            <p style={{ margin: 0, maxWidth: "40em" }}>
+              Reclama tu ficha gratis, sube fotos y precios, publica ofertas y recibe pedidos para fiestas. Los negocios que
+              se sumen antes del 16 de enero serán fundadores de la Ruta.
+            </p>
+            <Link href="/negocios" className="boton" style={{ alignSelf: "flex-start", marginTop: 8 }}>
+              Ver cómo funciona
+            </Link>
           </div>
         </section>
       </main>

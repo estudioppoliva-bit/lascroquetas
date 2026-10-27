@@ -237,3 +237,42 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; text-wrap
 .cuba-cierre { font-family: var(--display); font-size: 21px !important; font-weight: 600; color: var(--rosa-oscuro); }
 .boton-claro { background: #fff; color: var(--tinta); }
 .boton-claro:hover { background: var(--rosa-suave); color: var(--tinta); }
+
+/* Para negocios */
+.planes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px; align-items: stretch; }
+.plan { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 26px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.plan h3 { font-size: 24px; }
+.plan-precio { font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--rosa-oscuro); }
+.plan ul { margin: 6px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.plan-destacado { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+.plan-destacado .plan-precio { color: #f6c35e; }
+.plan-destacado .tenue { color: #f6dce6; }
+.plan-sello { position: absolute; top: -12px; right: 20px; padding: 4px 12px; border-radius: 12px; background: var(--rosa); color: #fff; font-size: 13px; font-weight: 800; }
+.pasos-negocio { list-style: none; margin: 0; padding: 0; counter-reset: pn; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 14px; }
+.pasos-negocio li { counter-increment: pn; display: flex; flex-direction: column; gap: 4px; padding: 20px; border-radius: 22px; background: var(--dorado-suave); }
+.pasos-negocio li::before { content: counter(pn); width: 36px; height: 36px; border-radius: 18px; background: var(--tinta); color: #fff; font-family: var(--display); font-weight: 600; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+.pasos-negocio strong { font-family: var(--display); font-size: 20px; font-weight: 600; }
+.solicitud-caja { display: flex; flex-wrap: wrap; gap: 28px; padding: 28px; border-radius: 32px; background: var(--rosa-suave); }
+.solicitud-texto { flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.solicitud-texto p { margin: 0; font-size: 17px; }
+.solicitud-caja > .formulario, .solicitud-caja > .formulario-listo { flex: 999 1 480px; min-width: 0; }
+.formulario { display: flex; flex-direction: column; gap: 16px; padding: 22px; border-radius: 24px; background: var(--superficie); }
+.campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; }
+.formulario label { display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 14px; }
+.formulario input:not([type="checkbox"]), .formulario select, .formulario textarea { min-height: 46px; padding: 10px 12px; border-radius: 12px; border: 1.5px solid var(--linea); font: inherit; font-weight: 600; color: var(--tinta); background: #fff; width: 100%; }
+.formulario textarea { resize: vertical; }
+.formulario [aria-invalid="true"] { border-color: var(--rosa); }
+.campo-error { color: var(--rosa-oscuro); font-size: 13px; }
+.intereses { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.intereses legend { font-weight: 800; font-size: 14px; margin-bottom: 8px; padding: 0; }
+.intereses label { flex-direction: row; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
+.intereses input { width: 20px; height: 20px; accent-color: var(--rosa); }
+.trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.formulario-aviso { margin: 0; padding: 10px 14px; border-radius: 12px; background: #fff0f4; color: var(--rosa-oscuro); font-weight: 700; }
+.formulario-listo { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 24px; border-radius: 24px; background: var(--superficie); }
+.formulario-listo h3 { font-size: 24px; }
+.formulario-listo p { margin: 6px 0 0; }
+.preguntas { display: flex; flex-direction: column; gap: 10px; }
+.preguntas details { padding: 16px 20px; border-radius: 18px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.preguntas summary { cursor: pointer; font-weight: 800; font-size: 17px; }
+.preguntas p { margin: 10px 0 0; }

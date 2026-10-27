@@ -1,7 +1,7 @@
 import Link from "next/link";
 import CroquetaCoqueta from "./CroquetaCoqueta";
 
-type Seccion = "lugares" | "recetas" | "historia" | "congeladas";
+type Seccion = "lugares" | "recetas" | "historia" | "congeladas" | "negocios";
 
 const enlaces: { href: string; texto: string; seccion?: Seccion }[] = [
   { href: "/lugares", texto: "Lugares", seccion: "lugares" },
@@ -9,7 +9,7 @@ const enlaces: { href: string; texto: string; seccion?: Seccion }[] = [
   { href: "/historia", texto: "Historia", seccion: "historia" },
   { href: "/congeladas", texto: "Congeladas", seccion: "congeladas" },
   { href: "/historia#festivales", texto: "Festivales" },
-  { href: "/#negocios", texto: "Para negocios" },
+  { href: "/negocios", texto: "Para negocios", seccion: "negocios" },
 ];
 
 export default function Encabezado({ activo }: { activo?: Seccion }) {
