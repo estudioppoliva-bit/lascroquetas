@@ -199,3 +199,41 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; text-wrap
 .chip-hielo { background: var(--hielo); color: var(--hielo-tinta); font-size: 13px; }
 .tarjeta-marca { flex: 1; }
 .banda-hielo .chip-hielo { background: #fff; }
+
+/* Mapa de la Ruta en la portada */
+.mapa-caja { display: flex; flex-direction: column; gap: 8px; padding: 28px 28px 16px; border-radius: 32px; background: var(--rosa-suave); }
+.mapa-texto { display: flex; flex-direction: column; gap: 8px; }
+.mapa-texto p { margin: 0; font-size: 17px; color: var(--tenue); max-width: 40em; }
+.mapa-ruta { display: block; width: 100%; height: auto; overflow: visible; }
+.mapa-tierra { fill: #fff3df; }
+.mapa-estados { fill: none; stroke: #f0c9d8; stroke-width: 1; stroke-linejoin: round; }
+.mapa-borde { fill: none; stroke: #d98aa9; stroke-width: 1.5; stroke-linejoin: round; }
+.mapa-ruta-linea { fill: none; stroke: var(--rosa); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 9; animation: ruta-avanza 1.2s linear infinite; }
+.mapa-salto { fill: none; stroke: var(--rosa); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 2 9; opacity: 0.45; }
+.mapa-punto { fill: var(--rosa); stroke: #fff; stroke-width: 3; }
+.mapa-pulso { fill: var(--rosa); opacity: 0.25; transform-box: fill-box; transform-origin: center; animation: pulso 2.4s ease-out infinite; }
+.mapa-etiqueta { font-family: var(--texto); font-size: 15px; font-weight: 800; fill: var(--tinta); paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+.mapa-marca:hover .mapa-punto, .mapa-marca:focus-visible .mapa-punto { fill: var(--tinta); }
+.mapa-marca:hover .mapa-etiqueta { fill: var(--rosa-oscuro); }
+.mapa-quieta { display: none; }
+@keyframes ruta-avanza { to { stroke-dashoffset: -11; } }
+@keyframes pulso { 0% { transform: scale(0.6); opacity: 0.45; } 100% { transform: scale(1.8); opacity: 0; } }
+@media (max-width: 640px) {
+  .mapa-caja { padding: 20px 12px 12px; border-radius: 24px; }
+  .mapa-etiqueta { font-size: 22px; stroke-width: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mapa-viajera { display: none; }
+  .mapa-quieta { display: inline; }
+  .mapa-ruta-linea, .mapa-pulso { animation: none; }
+}
+
+/* Apartado de humor: la croqueta en Cuba */
+.cuba-caja { display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 32px; background: var(--dorado-suave); }
+.cuba-caja > p { margin: 0; font-size: 18px; max-width: 44em; }
+.cuba-cabecera { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.cuba-cabecera h2 { margin-top: 6px; }
+.leyenda strong { font-family: var(--display); font-size: 21px; font-weight: 600; }
+.cuba-cierre { font-family: var(--display); font-size: 21px !important; font-weight: 600; color: var(--rosa-oscuro); }
+.boton-claro { background: #fff; color: var(--tinta); }
+.boton-claro:hover { background: var(--rosa-suave); color: var(--tinta); }

@@ -157,3 +157,30 @@ export const marcasMundo = [
   { pais: "Japón", nombres: "Nichirei" },
   { pais: "Brasil", nombres: "Vivenda do Camarão" },
 ];
+
+// Apartado de humor: por qué la croqueta es reina en Cuba.
+export const cubaIntro = [
+  "Porque rinde. Con un poquito de jamón, mucha leche y harina salían croquetas para toda la familia, y para el vecino que \"pasaba por casualidad\" justo a la hora de freír.",
+  "Porque estaba en todas partes: en la merienda, en el pan de la cafetería y en la cajita de los cumpleaños, junto al cake, la ensalada fría y los bocaditos. Una fiesta cubana sin croquetas no era fiesta, era una reunión.",
+];
+
+export const leyendasCubanas = [
+  {
+    titulo: "La croqueta de sustancia",
+    texto:
+      "En los tiempos flacos, la pregunta en la mesa no era \"¿de qué es la croqueta?\", sino \"¿de qué no es?\". La de sustancia sabía a algo que nadie supo nunca identificar, y es mejor así. Se comía, se repetía y nadie preguntaba dos veces.",
+  },
+  {
+    titulo: "Las Prodal explosivas",
+    texto:
+      "Entraban al sartén tranquilitas y salían disparadas por toda la cocina. Freírlas pedía tapa de cazuela como escudo, distancia prudente y un familiar valiente. Cuentan que más de un techo quedó decorado para siempre.",
+  },
+  {
+    titulo: "Las que se pegan al cielo de la boca",
+    texto:
+      "Las que no explotaban tenían otro talento: se quedaban pegadas al cielo de la boca. Comerse una era un ejercicio de diez minutos con la lengua haciendo horas extras. Remedio de la abuela: un buche de agua o, mejor, un cafecito.",
+  },
+];
+
+export const cubaCierre =
+  "Por eso, cuando en Miami muerdes una croqueta crujiente, cremosa y de jamón de verdad, no es solo una merienda: es justicia poética.";

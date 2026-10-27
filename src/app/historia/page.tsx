@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CroquetaCoqueta from "@/components/CroquetaCoqueta";
 import Encabezado from "@/components/Encabezado";
-import { eventos, lecturas, linea, mundo } from "@/data/contenido";
+import { cubaCierre, cubaIntro, eventos, lecturas, leyendasCubanas, linea, mundo } from "@/data/contenido";
 import { nombreEstilo } from "@/lib/datos";
 
 export const metadata: Metadata = {
@@ -45,6 +45,31 @@ export default function PaginaHistoria() {
               </li>
             ))}
           </ol>
+        </section>
+
+        <section className="seccion" id="cuba">
+          <div className="cuba-caja">
+            <div className="cuba-cabecera">
+              <div>
+                <span className="etiqueta">Con cariño y sin ofender</span>
+                <h2>¿Por qué en Cuba la croqueta es reina?</h2>
+              </div>
+              <CroquetaCoqueta ancho={120} titulo="La Croqueta Coqueta, muerta de risa" />
+            </div>
+            {cubaIntro.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+            <p>Y claro, toda reina tiene sus leyendas:</p>
+            <div className="rejilla">
+              {leyendasCubanas.map((l) => (
+                <div key={l.titulo} className="tarjeta leyenda">
+                  <strong>{l.titulo}</strong>
+                  <span>{l.texto}</span>
+                </div>
+              ))}
+            </div>
+            <p className="cuba-cierre">{cubaCierre}</p>
+          </div>
         </section>
 
         <section className="seccion">

@@ -1,16 +1,20 @@
 import Link from "next/link";
 import CroquetaCoqueta from "@/components/CroquetaCoqueta";
 import Encabezado from "@/components/Encabezado";
+import MapaRuta from "@/components/MapaRuta";
 import TarjetaLugar from "@/components/TarjetaLugar";
 import { marcas } from "@/data/contenido";
 import { recetas } from "@/data/recetas";
 import { buscarLugares, totales } from "@/lib/datos";
 
 export default async function Portada() {
-  const [cifras, mejores] = await Promise.all([
+  const [cifras, mejores, todos] = await Promise.all([
     totales(),
     buscarLugares({ zona: "miami", estilo: "cu" }).then((l) => l.slice(0, 5)),
+    buscarLugares(),
   ]);
+  const conteo: Record<string, number> = {};
+  for (const l of todos) conteo[l.zona] = (conteo[l.zona] ?? 0) + 1;
 
   return (
     <>
@@ -47,6 +51,20 @@ export default async function Portada() {
           </div>
           <div className="portada-arte">
             <CroquetaCoqueta ancho={300} titulo="La Croqueta Coqueta" />
+          </div>
+        </section>
+
+        <section className="contenedor seccion" id="mapa">
+          <div className="mapa-caja">
+            <div className="mapa-texto">
+              <span className="etiqueta">De estado en estado</span>
+              <h2>La Croqueta Coqueta se va de ruta</h2>
+              <p>
+                De Miami a Honolulu, hay croquetas en {cifras.zonas} zonas de Estados Unidos. Toca una ciudad para ver sus
+                lugares.
+              </p>
+            </div>
+            <MapaRuta conteo={conteo} />
           </div>
         </section>
 
@@ -87,9 +105,14 @@ export default async function Portada() {
                 Nació en la corte francesa del siglo XVII para aprovechar las sobras. En el XIX se hizo de bechamel, España la
                 convirtió en tapa, Cuba le dio su forma alargada y el exilio la trajo a las ventanitas de la Calle 8.
               </p>
-              <Link href="/historia" className="boton" style={{ marginTop: 6 }}>
-                Leer la historia
-              </Link>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 6 }}>
+                <Link href="/historia" className="boton">
+                  Leer la historia
+                </Link>
+                <Link href="/historia#cuba" className="boton boton-claro">
+                  La croqueta de sustancia
+                </Link>
+              </div>
             </div>
             <div>
               <div className="fecha">
