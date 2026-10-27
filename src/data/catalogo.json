@@ -1,0 +1,118 @@
+{
+ "zonas": [
+  {
+   "clave": "miami",
+   "nombre": "Miami"
+  },
+  {
+   "clave": "sfl",
+   "nombre": "Sur de Florida"
+  },
+  {
+   "clave": "tampa",
+   "nombre": "Tampa"
+  },
+  {
+   "clave": "daytona",
+   "nombre": "Daytona Beach"
+  },
+  {
+   "clave": "nj",
+   "nombre": "Nueva Jersey"
+  },
+  {
+   "clave": "la",
+   "nombre": "Los Ángeles"
+  },
+  {
+   "clave": "ny",
+   "nombre": "Nueva York"
+  },
+  {
+   "clave": "dc",
+   "nombre": "Washington, DC"
+  },
+  {
+   "clave": "phl",
+   "nombre": "Filadelfia"
+  },
+  {
+   "clave": "ma",
+   "nombre": "Massachusetts"
+  },
+  {
+   "clave": "chi",
+   "nombre": "Chicago e Illinois"
+  },
+  {
+   "clave": "mi",
+   "nombre": "Michigan"
+  },
+  {
+   "clave": "orl",
+   "nombre": "Orlando"
+  },
+  {
+   "clave": "nola",
+   "nombre": "Nueva Orleans"
+  },
+  {
+   "clave": "co",
+   "nombre": "Colorado"
+  },
+  {
+   "clave": "ky",
+   "nombre": "Kentucky"
+  },
+  {
+   "clave": "hi",
+   "nombre": "Honolulu"
+  }
+ ],
+ "estilos": [
+  {
+   "clave": "cu",
+   "nombre": "Croquetas cubanas"
+  },
+  {
+   "clave": "es",
+   "nombre": "Croquetas españolas"
+  },
+  {
+   "clave": "pt",
+   "nombre": "Croquetas portuguesas"
+  },
+  {
+   "clave": "br",
+   "nombre": "Coxinhas brasileñas"
+  },
+  {
+   "clave": "it",
+   "nombre": "Arancini italianos"
+  },
+  {
+   "clave": "jp",
+   "nombre": "Korokke japonés"
+  },
+  {
+   "clave": "nl",
+   "nombre": "Kroket holandés"
+  },
+  {
+   "clave": "be",
+   "nombre": "Croquetas belgas"
+  },
+  {
+   "clave": "fr",
+   "nombre": "Croquetas francesas"
+  },
+  {
+   "clave": "lc",
+   "nombre": "Boudin balls de Luisiana"
+  },
+  {
+   "clave": "su",
+   "nombre": "Salmon croquettes sureñas"
+  }
+ ]
+}

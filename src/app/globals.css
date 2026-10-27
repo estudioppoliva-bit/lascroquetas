@@ -1,0 +1,142 @@
+:root {
+  --fondo: #fff7fa;
+  --superficie: #ffffff;
+  --tinta: #3e1428;
+  --tenue: #6a3a52;
+  --linea: #f3d3e0;
+  --rosa: #c2306a;
+  --rosa-oscuro: #b0285e;
+  --rosa-suave: #ffe4ee;
+  --dorado-suave: #ffe9c7;
+  --hielo: #e2f0fb;
+  --hielo-tinta: #12304d;
+  --display: "Fredoka", system-ui, sans-serif;
+  --texto: "Nunito", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a { color: var(--rosa-oscuro); }
+a:hover { color: #7e1a43; }
+:focus-visible { outline: 3px solid var(--rosa); outline-offset: 2px; }
+
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; text-wrap: balance; }
+
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-left)); }
+.tenue { color: var(--tenue); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.etiqueta { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rosa-oscuro); }
+
+/* Encabezado */
+.encabezado { background: var(--superficie); border-bottom: 1.5px solid var(--linea); }
+.encabezado-fila { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding-block: 12px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--tinta); font-family: var(--display); font-size: 21px; font-weight: 700; }
+.menu { display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 800; }
+.menu a { color: var(--tinta); text-decoration: none; }
+.menu a[aria-current="page"] { color: var(--rosa-oscuro); border-bottom: 3px solid var(--rosa); }
+
+/* Portada */
+.portada { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; padding-block: 56px 40px; }
+.portada-texto { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.portada h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+.portada p { font-size: 19px; color: var(--tenue); max-width: 34em; margin: 0; }
+.portada-arte { flex: 1 1 320px; min-height: 240px; border-radius: 28px; background: var(--rosa-suave); display: flex; align-items: center; justify-content: center; }
+.cifras { display: flex; flex-wrap: wrap; gap: 24px; color: var(--tenue); }
+.cifras strong { font-family: var(--display); font-size: 26px; color: var(--tinta); }
+
+/* Buscador */
+.buscador { display: flex; flex-wrap: wrap; gap: 10px; padding: 8px; border-radius: 22px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.buscador input, .buscador select { flex: 1 1 180px; min-width: 0; height: 50px; border: 0; padding: 0 14px; font: inherit; font-size: 16px; color: var(--tinta); background: transparent; border-radius: 14px; }
+.boton { display: inline-flex; align-items: center; justify-content: center; height: 50px; padding: 0 24px; border-radius: 25px; border: 0; background: var(--rosa); color: #fff; font: inherit; font-weight: 800; font-size: 16px; text-decoration: none; cursor: pointer; }
+.boton:hover { color: #fff; background: var(--rosa-oscuro); }
+.boton-contorno { background: transparent; color: var(--tinta); border: 2px solid var(--tinta); }
+.boton-contorno:hover { background: var(--tinta); color: #fff; }
+
+/* Secciones */
+.seccion { padding-block: 32px; display: flex; flex-direction: column; gap: 18px; }
+.seccion h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); }
+.rejilla { display: flex; flex-wrap: wrap; gap: 14px; }
+.rejilla > * { flex: 1 1 240px; min-width: 0; }
+
+/* Tarjeta de lugar */
+.tarjeta-lugar { display: flex; gap: 16px; padding: 14px; border-radius: 22px; background: var(--superficie); border: 1.5px solid var(--linea); text-decoration: none; color: inherit; }
+.tarjeta-lugar:hover { border-color: var(--rosa); color: inherit; }
+.foto-lugar { width: 120px; height: 100px; flex: none; border-radius: 16px; background: var(--dorado-suave); }
+.tarjeta-cuerpo { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.tarjeta-cuerpo p { margin: 0; font-size: 15px; }
+.tarjeta-titulo { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.tarjeta-titulo h3 { font-size: 20px; font-weight: 600; }
+.estrellas { flex: none; font-weight: 800; }
+.estrellas small { font-weight: 600; color: var(--tenue); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip { font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 8px; background: #f6eef2; color: var(--tinta); }
+.chip-rosa { background: var(--rosa-suave); color: var(--rosa-oscuro); }
+
+@media (max-width: 520px) {
+  .tarjeta-lugar { flex-direction: column; }
+  .foto-lugar { width: 100%; height: 140px; }
+}
+
+/* Página de lugares */
+.lugares-cuerpo { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; padding-block: 8px 56px; }
+.filtros { flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 20px; border-radius: 22px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.filtros label { display: flex; flex-direction: column; gap: 6px; font-weight: 800; font-size: 14px; }
+.filtros select, .filtros input { height: 46px; padding: 0 12px; border-radius: 12px; border: 1.5px solid var(--linea); font: inherit; font-weight: 600; color: var(--tinta); background: #fff; }
+.resultados { flex: 999 1 460px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.migas { font-size: 14px; color: var(--tenue); padding-top: 20px; }
+
+/* Ficha */
+.galeria { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: 160px 160px; gap: 10px; border-radius: 28px; overflow: hidden; }
+.galeria div { background: var(--dorado-suave); }
+.galeria div:nth-child(even) { background: var(--rosa-suave); }
+.galeria div:first-child { grid-column: span 2; grid-row: span 2; }
+@media (max-width: 640px) {
+  .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 160px; }
+  .galeria div:not(:first-child) { display: none; }
+}
+.ficha-cuerpo { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; padding-block: 24px; }
+.ficha-principal { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.ficha-principal h1 { font-size: clamp(2.2rem, 4vw, 2.9rem); }
+.ficha-lateral { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 26px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.notas { display: flex; flex-wrap: wrap; gap: 12px; }
+.nota-caja { flex: 1 1 200px; padding: 16px 18px; border-radius: 20px; background: var(--superficie); border: 1.5px solid var(--linea); }
+.nota-caja strong { display: block; font-family: var(--display); font-size: 30px; font-weight: 600; }
+.vacio { display: flex; gap: 18px; align-items: center; padding: 22px; border-radius: 22px; background: var(--rosa-suave); font-weight: 700; }
+
+/* Bandas */
+.banda-oscura { padding: 32px; border-radius: 32px; background: var(--tinta); color: #fff; display: flex; flex-wrap: wrap; gap: 24px; }
+.banda-oscura > * { flex: 1 1 320px; min-width: 0; }
+.banda-oscura p { color: #f6dce6; }
+.fecha { display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 18px; background: #5a2240; margin-bottom: 10px; }
+.fecha b { width: 64px; flex: none; text-align: center; font-family: var(--display); font-size: 18px; color: #f6c35e; }
+.banda-hielo { background: var(--hielo); color: var(--hielo-tinta); }
+.banda-hielo .tarjeta { background: #fff; border-radius: 20px; padding: 16px; }
+
+.tarjeta { padding: 18px; border-radius: 22px; background: var(--superficie); border: 1.5px solid var(--linea); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 6px; }
+
+/* Pie */
+.pie { background: var(--superficie); border-top: 1.5px solid var(--linea); margin-top: 32px; }
+.pie-fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 24px; font-size: 14px; color: var(--tenue); }
+
+/* La Croqueta Coqueta: pestañea y sonríe; la congelada tiembla */
+.coqueta .ojo, .coqueta .sonrisa { transform-box: fill-box; }
+.coqueta .ojo { transform-origin: 50% 70%; animation: pestaneo 4s infinite; }
+.coqueta .sonrisa { transform-origin: 50% 0; animation: sonrie 4s infinite; }
+.coqueta.tiembla { animation: tiembla 0.35s linear infinite; }
+@keyframes pestaneo { 0%, 88%, 100% { transform: scaleY(1); } 91%, 96% { transform: scaleY(0.08); } 94%, 98% { transform: scaleY(1); } }
+@keyframes sonrie { 0%, 40%, 75%, 100% { transform: scale(1); } 50%, 65% { transform: scale(1.35, 1.5); } }
+@keyframes tiembla { 0% { transform: translate(0, 0); } 25% { transform: translate(-2px, 1px); } 50% { transform: translate(2px, -1px); } 75% { transform: translate(-1px, -1px); } }
+@media (prefers-reduced-motion: reduce) {
+  .coqueta .ojo, .coqueta .sonrisa, .coqueta.tiembla { animation: none; }
+}
