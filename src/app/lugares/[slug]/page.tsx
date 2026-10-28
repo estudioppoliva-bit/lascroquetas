@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import CroquetaCoqueta from "@/components/CroquetaCoqueta";
+import ComunidadLugar from "@/components/ComunidadLugar";
 import Encabezado from "@/components/Encabezado";
 import lugaresLocales from "@/data/lugares.json";
 import { cercanos, formatoNumero, nombreEstilo, nombreZona, obtenerLugar } from "@/lib/datos";
@@ -58,7 +58,7 @@ export default async function FichaLugar({ params }: { params: Promise<Params> }
               {lugar.nota && <p style={{ margin: 0, fontSize: 17 }}>{lugar.nota}</p>}
             </div>
 
-            <div className="notas">
+            <ComunidadLugar slug={lugar.slug} nombre={lugar.nombre}>
               <div className="nota-caja">
                 <span className="tenue">Evaluación de Google</span>
                 <strong>{lugar.evaluacion !== null ? `★ ${lugar.evaluacion.toFixed(1)}` : "—"}</strong>
@@ -66,20 +66,7 @@ export default async function FichaLugar({ params }: { params: Promise<Params> }
                   {lugar.resenas !== null ? `${formatoNumero(lugar.resenas)} reseñas` : "Sin datos"}
                 </span>
               </div>
-              <div className="nota-caja">
-                <span className="tenue">Nota de la Ruta</span>
-                <strong style={{ color: "var(--rosa-oscuro)" }}>— / 5</strong>
-                <span className="tenue">Aún sin notas de la comunidad</span>
-              </div>
-            </div>
-
-            <section style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <h2 style={{ fontSize: 26 }}>Comentarios de la Ruta</h2>
-              <div className="vacio">
-                <CroquetaCoqueta ancho={90} />
-                <span>¡Nadie ha contado todavía cómo están estas croquetas! Muy pronto podrás escribir el primer comentario.</span>
-              </div>
-            </section>
+            </ComunidadLugar>
           </div>
 
           <aside className="ficha-lateral" aria-label="Cómo llegar">

@@ -1,7 +1,8 @@
 import Link from "next/link";
+import BotonCuenta from "./BotonCuenta";
 import CroquetaCoqueta from "./CroquetaCoqueta";
 
-type Seccion = "lugares" | "recetas" | "historia" | "congeladas" | "negocios";
+type Seccion = "lugares" | "recetas" | "historia" | "congeladas" | "negocios" | "pasaporte";
 
 const enlaces: { href: string; texto: string; seccion?: Seccion }[] = [
   { href: "/lugares", texto: "Lugares", seccion: "lugares" },
@@ -27,6 +28,7 @@ export default function Encabezado({ activo }: { activo?: Seccion }) {
             </Link>
           ))}
         </nav>
+        <BotonCuenta activo={activo === "pasaporte"} />
       </div>
     </header>
   );

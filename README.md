@@ -31,6 +31,10 @@ Sin `.env.local`, la app funciona igual con los datos de `src/data/lugares.json`
 
 Para aplicarlos: en el panel de Supabase, abre el editor SQL, pega y ejecuta primero la migración y después `seed.sql`.
 
+- `supabase/migrations/20261028150000_comunidad.sql`: perfiles públicos, una opinión por persona y lugar, y reportes de comentarios.
+
+**Cuentas (Supabase Auth):** se entra con un enlace al correo, sin contraseña. En Supabase → Authentication → URL Configuration hay que poner el *Site URL* del dominio principal y añadir en *Redirect URLs* `https://larutadelacroqueta.com/**`, `https://lascroquetas.vercel.app/**` y `http://localhost:3000/**`. Para que lleguen correos a cualquier persona (no solo a los miembros del proyecto) hay que configurar un SMTP propio en Authentication → Emails.
+
 **Importante sobre Google:** la evaluación y el número de reseñas de Google que trae el registro inicial son de octubre de 2026. Las condiciones de Google Places no permiten guardar esos datos, así que en producción hay que consultarlos en vivo a partir de `google_place_id`.
 
 ## Estructura
@@ -45,7 +49,6 @@ supabase/           migración y datos iniciales
 
 ## Próximos pasos
 
-- Inicio de sesión, comentarios y pasaporte con Supabase Auth.
 - Datos en vivo de Google Places (teléfono, horario, entrega, fotos).
 - Secciones de recetas, congeladas, festivales y negocios.
 - Despliegue en Vercel con el dominio.
